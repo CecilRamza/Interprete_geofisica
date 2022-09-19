@@ -32,7 +32,7 @@ componentes=[]
 red=0
 n_redes=5
 n_entrenar=5
-centroides=8
+centroides=3
 bases=["2X.csv","3X.csv","4X.csv","5X.csv","6X.csv","2F.csv","3F.csv","4F.csv","5F.csv","6F.csv"]
 columnas=[2,3,4,5,6,12,13,14,15,16,17,18,19,20,21,27,28,29,30,31,37,38,39,40,41,47,48,49,50,51,57,58,59,60,61]
 reduccion=[[1,2,3,4],[6,7,8,9],[11,12,13,14],[16,17,18,19],[21,22,23,24],[26,27,28,29],[31,32,33,34]]
@@ -86,7 +86,7 @@ while ciclo:
     entrenada=entrenamiento(archivos,columnas,escalamiento_min=[-256.0433,-256.0433,-256.0433,-256.0433,-256.0433,-130.7216,-130.7216,-130.7216,-130.7216,-130.7216,-333.2798,-333.2798,-333.2798,-333.2798,-333.2798,0.0426,0.0426,0.0426,0.0426,0.0426,0.0025,0.0025,0.0025,0.0025,0.0025,-1.57,-1.57,-1.57,-1.57,-1.57,0.0017,0.0017,0.0017,0.0017,0.0017],escalamiento_max=[235.7932,235.7932,235.7932,235.7932,235.7932,104.7824,104.7824,104.7824,104.7824,104.7824,413.7691,413.7691,413.7691,413.7691,413.7691,1192.3648,1192.3648,1192.3648,1192.3648,1192.3648,776.2437,776.2437,776.2437,776.2437,776.2437,1.57,1.57,1.57,1.57,1.57,29.2427,29.2427,29.2427,29.2427,29.2427])
     entrenada.reduccion_pca(reduccion,varianzas)
     entrenada.escalamiento(metodo="minmax")
-    entrenada.som(6,6,porcentaje_base=0.15,vecindad=0.5,aprendizaje=0.1,topologia="rectangular")
+    entrenada.som(6,6,porcentaje_base=0.15,vecindad=0.5,aprendizaje=0.1,topologia="hexagonal")
     red=red+1
     redes.append(entrenada.mao)
     escalas.append(entrenada.escala)

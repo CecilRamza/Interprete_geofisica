@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.interpolate import griddata
 from sklearn.ensemble import IsolationForest as IsFo
 from sklearn.neighbors import LocalOutlierFactor as LOF
+from herramientas import plot_signal_decomp
 
 #######################################################################
 #                                                                     #
@@ -326,18 +327,18 @@ class filtrado:
             self.filtro_malla_magne(c,resolucion_x,resolucion_y,ondicula,componentes,pesos2)
     def guardar(self,nombre):
         formato=[]
-        if(self.tipo=="magnetometría"):
-            filtrados=self.filtrados[:,0:2]
-            for i in range(self.filtrados.shape[1]):
-                formato.append("%0.8f")
-                if(i>1):
-                    x=self.datos[:,0]
-                    y=self.datos[:,1]
-                    f=griddata((self.filtrados[:,0],self.filtrados[:,1]),self.filtrados[:,i],(x[None,:],y[:,None]),method="nearest")
-                    f=np.reshape(f,(x.shape[0],1))
-                    filtrados=np.hstack((filtrados,f))
-            self.filtrados=filtrados
-        elif(self.tipo=="eléctrica"):
-            for i in range(self.filtrados.shape[1]):
-                formato.append("%0.8f")
+#        if(self.tipo=="magnetometría"):
+#            filtrados=self.filtrados[:,0:2]
+#            for i in range(self.filtrados.shape[1]):
+#                formato.append("%0.8f")
+#                if(i>1):
+#                    x=self.datos[:,0]
+#                    y=self.datos[:,1]
+#                    f=griddata((self.filtrados[:,0],self.filtrados[:,1]),self.filtrados[:,i],(x[None,:],y[:,None]),method="nearest")
+#                    f=np.reshape(f,(x.shape[0],1))
+#                    filtrados=np.hstack((filtrados,f))
+#            self.filtrados=filtrados
+#        elif(self.tipo=="eléctrica"):
+        for i in range(self.filtrados.shape[1]):
+            formato.append("%0.8f")
         np.savetxt(nombre,self.filtrados,delimiter=",",fmt=formato)

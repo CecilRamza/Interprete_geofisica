@@ -1,3 +1,4 @@
+import random
 import numpy as np
 from minisom import MiniSom
 import matplotlib.pyplot as plt
@@ -9,6 +10,7 @@ from sklearn_extra.cluster import KMedoids
 from matplotlib.patches import RegularPolygon
 from pyclustering.cluster.kmedians import kmedians
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+from herramientas import *
 
 ########################################################
 #                                                      #
