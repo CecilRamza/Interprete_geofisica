@@ -5,10 +5,10 @@
 
 ## Metodologías de interpretación automática de datos geofísicos multidimensionales
 ## Manuel Ortiz Osio
+## Correo: soff.rpg@gmail.com
 ## Director de tesis: Dr. Erik Molino Minero Re
 
-
-*Código implementado para el trabajo de tesis de maestría*
+*Código implementado para el trabajo de* [Tesis de maestría](https://tesiunam.dgb.unam.mx/F/IYUEVQKCRXV4B74YRNE4AC22RJH5FYNJUNJ2XAHSB4U12DFDJA-07798?func=full-set-set&set_number=020124&set_entry=000001&format=999 "TESIUNAM")
 
 Contiene lo siguiente:
 
